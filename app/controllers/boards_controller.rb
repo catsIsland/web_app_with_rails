@@ -1,4 +1,4 @@
-class BoardsController < ActionController::Base
+class BoardsController < ApplicationController
   def index
   end
 end
