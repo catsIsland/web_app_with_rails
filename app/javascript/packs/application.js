@@ -11,6 +11,14 @@ import "channels"
 import "bootstrap";
 import "../stylesheets/application.scss";
 
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require('bootstrap/dist/js/bootstrap.min.js')
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
