@@ -3,6 +3,16 @@
   <div class="ml-auto boards__linkBox">
     <%= link_to '新規作成', new_board_path, class: 'btn btn-outline-dark' %>
   </div>
+  <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
+    <%= select_tag :tag_id,
+        options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+        {
+          prompt: 'タグで絞り込み',
+          class: 'form-control boards__select',
+          onchange: 'submit(this.form);'
+        }
+    %>
+  <% end %>
 </div>
 <% if flash[:notice]%>
   <div class="alert alert-danger">
